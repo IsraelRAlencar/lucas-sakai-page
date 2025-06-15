@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
           <QueryProvider>
-            <ThemeProvider defaultTheme="light" storageKey="ui-theme">
+            <ThemeProvider defaultTheme="light" storageKey="sakai-ui-theme">
               <TooltipProvider>
                 <Toaster />
                 <Sonner />

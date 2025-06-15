@@ -1,11 +1,11 @@
 'use client'
 
 import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
 import { Button } from "./Button"
+import { useTheme } from "../ThemeProvider";
 
 export function ThemeButton() {
-  const { setTheme, theme } = useTheme()
+  const { setTheme, theme } = useTheme();
 
   return (
     <Button
