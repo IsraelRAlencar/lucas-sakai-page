@@ -6,6 +6,9 @@ import { ThemeProvider } from "./components/ThemeProvider";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { Toaster } from "./components/ui/Toaster";
 import { Toaster as Sonner } from "./components/ui/Sonner";
+import Header from "./components/layout/Header";
+import { Footer } from "react-day-picker";
+import FixedFooter from "./components/layout/FixedFooter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,14 +31,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
           <QueryProvider>
             <ThemeProvider defaultTheme="light" storageKey="ui-theme">
               <TooltipProvider>
                 <Toaster />
                 <Sonner />
-                {children}
+                <div className="flex flex-col min-h-screen bg-background">
+                  <Header />
+                  <main className="flex-grow">
+                    {children}
+                  </main>
+                  <Footer />
+                  <FixedFooter />
+              </div>
               </TooltipProvider>
             </ThemeProvider>
           </QueryProvider>

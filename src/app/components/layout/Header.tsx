@@ -1,9 +1,11 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
 import { Button } from '../ui/Button'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
-import { ThemeToggleButton } from '../ui/Themetogglebutton';
 import NavLink from '../ui/NavLink';
+import { ThemeButton } from '../ui/ThemeButton'
 
 const navLinks = [
   { title: 'Início', path: '/' },
@@ -47,10 +49,10 @@ export default function Header() {
           <Button asChild className="rounded-full">
             <Link href="/contato">Contato</Link>
           </Button>
-          <ThemeToggleButton />
+          <ThemeButton />
         </nav>
         <div className="md:hidden flex items-center gap-2">
-          <ThemeToggleButton />
+          <ThemeButton />
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Abrir menu">
             <Menu className="h-6 w-6 text-foreground" />
           </button>

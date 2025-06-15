@@ -1,5 +1,11 @@
 'use client'
 
+import { Button } from '@/app/components/ui/Button'
+import { Calendar } from '@/app/components/ui/Calendar'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/app/components/ui/Form'
+import { Input } from '@/app/components/ui/Input'
+import { Textarea } from '@/app/components/ui/Textarea'
+import { cn } from '@/app/lib/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Popover, PopoverContent, PopoverTrigger } from '@radix-ui/react-popover'
 import { format } from 'date-fns'
@@ -9,12 +15,6 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import * as z from "zod";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../components/ui/Form'
-import { Input } from '../components/ui/Input'
-import { Textarea } from '../components/ui/Textarea'
-import { Calendar } from '../components/ui/Calendar'
-import { Button } from '../components/ui/Button'
-import { cn } from '../lib/utils'
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "O nome deve ter pelo menos 2 caracteres." }),
