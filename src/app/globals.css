@@ -1,42 +1,115 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 250 17% 14%; /* #1e1c29 sophisticated black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 250 17% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 250 17% 14%;
+
+    --primary: 46 76% 51%; /* #e1b521 gold */
+    --primary-foreground: 250 17% 14%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 250 17% 14%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 34 93% 37%; /* #b86509 bronze */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 46 76% 51%; /* gold for focus rings */
+
+    --radius: 0.75rem;
+
+    /* Custom colors */
+    --blue: 217 91% 60%; /* #3b82f6 blue for light theme */
+    --blue-foreground: 0 0% 98%;
+  }
+
+  .dark {
+    --background: 43 65% 7%; /* #1a1706 amber black */
+    --foreground: 47 59% 71%; /* #e1c98d golden beige */
+
+    --card: 43 65% 7%;
+    --card-foreground: 47 59% 71%;
+
+    --popover: 43 65% 7%;
+    --popover-foreground: 47 59% 71%;
+
+    --primary: 329 36% 58%; /* #c06892 soft wine pink */
+    --primary-foreground: 43 65% 7%;
+
+    --secondary: 43 20% 12%;
+    --secondary-foreground: 47 59% 71%;
+
+    --muted: 43 20% 12%;
+    --muted-foreground: 47 30% 60%;
+
+    --accent: 47 59% 71%; /* #e1c98d golden beige */
+    --accent-foreground: 43 65% 7%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 43 20% 15%;
+    --input: 43 20% 15%;
+    --ring: 329 36% 58%;
+
+    /* Custom colors for dark theme */
+    --blue: 47 59% 71%; /* Use golden beige as blue alternative in dark theme */
+    --blue-foreground: 43 65% 7%;
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in-up-delay {
+    animation: fade-in-up 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
 }
