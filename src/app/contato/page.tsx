@@ -16,6 +16,8 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import * as z from "zod";
 
+export default function page() {
+
 const formSchema = z.object({
   name: z.string().min(2, { message: "O nome deve ter pelo menos 2 caracteres." }),
   phone: z.string().min(10, { message: "Por favor, insira um número de telefone válido." }),
@@ -47,8 +49,6 @@ function onSubmit(data: z.infer<typeof formSchema>) {
     });
     form.reset();
 }
-
-export default function page() {
   return (
     <div className="container mx-auto px-4 py-8 md:py-24 animate-fade-in-up">
       <div className="max-w-4xl mx-auto text-center">
