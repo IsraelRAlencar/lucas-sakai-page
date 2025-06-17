@@ -29,26 +29,27 @@ const formSchema = z.object({
 });
 
 
-const form = useForm<z.infer<typeof formSchema>>({
+export default function Page() { // Renamed 'page' to 'Page' for convention
+  // Move the useForm hook inside the component
+  const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-        name: "",
-        phone: "",
-        eventType: "",
-        message: "",
+      name: "",
+      phone: "",
+      eventType: "",
+      message: "",
     },
-});
+  });
 
-function onSubmit(data: z.infer<typeof formSchema>) {
+  function onSubmit(data: z.infer<typeof formSchema>) {
     console.log("Form data submitted:", data);
     toast.success("Mensagem enviada com sucesso!", {
-        description: "Obrigado por entrar em contato. Retornarei em breve!",
-        duration: 5000,
+      description: "Obrigado por entrar em contato. Retornarei em breve!",
+      duration: 5000,
     });
     form.reset();
-}
+  }
 
-export default function page() {
   return (
     <div className="container mx-auto px-4 py-8 md:py-24 animate-fade-in-up">
       <div className="max-w-4xl mx-auto text-center">
