@@ -34,9 +34,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t mt-10 pt-8 text-center text-sm">
+        <div className="border-t mt-10 pt-8 text-center text-sm mb-12">
           <p>&copy; {new Date().getFullYear()} Lucas Sakai. Todos os direitos reservados.</p>
-          <p className="mt-2 text-xs">Desenvolvido com ❤️ por <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-primary">Lovable</a>.</p>
+          <p className="mt-2 text-xs">Desenvolvido por <a href="https://israelalencar.com" target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-primary">Israel Alencar</a>.</p>
         </div>
       </div>
     </footer>

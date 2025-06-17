@@ -12,7 +12,7 @@ const testimonials = [
     date: "Setembro 2023",
     content: "Lucas tornou nosso casamento ainda mais especial. Sua cerimônia foi emocionante, personalizada e tocou o coração de todos os presentes. Recomendamos de olhos fechados!",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=80&h=80&fit=crop&crop=faces"
+    image: "https://images.unsplash.com/photo-806800052052-a08af7148866?w=80&h=80&fit=crop&crop=faces"
   },
   {
     id: 2,
@@ -73,9 +73,9 @@ export default function page() {
 
   return (
      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-8">
         {/* Header Section */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-8 animate-fade-in-up">
           <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 gradient-text">
             Depoimentos
           </h1>

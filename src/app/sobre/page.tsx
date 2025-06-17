@@ -20,11 +20,11 @@ export default function page() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16">
+      <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Personal Story */}
-            <div className="mb-16 animate-fade-in-up-delay">
+            <div className="mb-8 animate-fade-in-up-delay">
               <h2 className="text-3xl font-serif font-bold mb-8 text-center">Minha História</h2>
               <div className="prose prose-lg max-w-none text-muted-foreground">
                 <p className="mb-6">
@@ -47,7 +47,7 @@ export default function page() {
             </div>
 
             {/* Values Grid */}
-            <div className="mb-16">
+            <div className="mb-8">
               <h2 className="text-3xl font-serif font-bold mb-12 text-center">Meus Valores</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <Card className="hover:shadow-lg transition-shadow duration-300">
@@ -97,7 +97,7 @@ export default function page() {
             </div>
 
             {/* Experience Section */}
-            <div className="mb-16">
+            <div className="mb-8">
               <h2 className="text-3xl font-serif font-bold mb-8 text-center">Experiência</h2>
               <div className="bg-muted/50 rounded-lg p-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -118,7 +118,7 @@ export default function page() {
             </div>
 
             {/* Mission Statement */}
-            <div className="text-center bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-12">
+            <div className="text-center bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-12 mb-10">
               <h2 className="text-3xl font-serif font-bold mb-6">Minha Missão</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 "Transformar sonhos em realidade através de cerimônias que tocam o coração, 

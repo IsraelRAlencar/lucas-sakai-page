@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, CalendarIcon, Heart, Star } from "lucide-react";
+import { ArrowRight, Cake, CalendarIcon, Heart, PartyPopper, Star } from "lucide-react";
 import { Button } from "./components/ui/Button";
 import { Card, CardContent, CardFooter } from "./components/ui/Card";
 import { useForm } from "react-hook-form";
@@ -46,10 +46,10 @@ const testimonials = [
 ];
 
 const portfolioImages = [
-  { src: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=800&auto=format&fit=crop", alt: "Celebração de casamento" },
-  { src: "https://images.unsplash.com/photo-1519225421980-715cb0215a0d?q=80&w=800&auto=format&fit=crop", alt: "Detalhes de uma cerimônia" },
-  { src: "https://images.unsplash.com/photo-1485965217507-ab326242a199?q=80&w=800&auto=format&fit=crop", alt: "Casal em momento especial" },
-  { src: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=800&auto=format&fit=crop", alt: "Cerimônia na praia" },
+  { src: "/images/portfolio-1.jpg", alt: "Celebração de casamento" },
+  { src: "/images/portfolio-2.jpg", alt: "Detalhes de uma cerimônia" },
+  { src: "/images/portfolio-3.jpeg", alt: "Casal em momento especial" },
+  { src: "/images/portfolio-4.jpg", alt: "Cerimônia na praia" },
 ];
 
 const services = [
@@ -62,6 +62,11 @@ const services = [
     icon: Star,
     title: "Bodas",
     description: "Renovação de votos com significado e emoção",
+  },
+  {
+    icon: PartyPopper,
+    title: "Debutantes",
+    description: "Celebrações inesquecíveis para jovens que estão se tornando adultas",
   },
   {
     icon: CalendarIcon,
@@ -97,7 +102,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{ 
-            backgroundImage: "url(https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2074&auto=format&fit=crop)",
+            backgroundImage: "url('/images/hero-background.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70" />
@@ -119,7 +124,7 @@ export default function Home() {
                 size="lg" 
                 className="rounded-full px-8 py-6 text-lg font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                <Link href="/portfolio" className="flex items-center gap-2">
+                <Link href="/portfolio" className="flex text-white items-center gap-2">
                   Ver Cerimônias
                   <ArrowRight className="w-5 h-5" />
                 </Link>
@@ -147,7 +152,7 @@ export default function Home() {
       {/* About Section */}
       <section className="py-20 md:py-32 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
             <div className="space-y-8 animate-fade-in-up">
               <div className="space-y-6">
                 <span className="text-primary font-semibold tracking-wide uppercase text-sm">Sobre Lucas Sakai</span>
@@ -176,7 +181,7 @@ export default function Home() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300" />
                 <img 
-                  src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=400&h=400&fit=crop&crop=faces" 
+                  src="/images/lucas-sakai.jpg" 
                   alt="Lucas Sakai" 
                   className="relative rounded-full shadow-2xl w-80 h-80 object-cover ring-4 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300 transform group-hover:scale-105" 
                 />
@@ -189,7 +194,7 @@ export default function Home() {
       {/* Services Section */}
       <section className="py-20 md:py-32 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
+          <div className="text-center max-w-3xl mx-auto mb-8 space-y-6">
             <span className="text-primary font-semibold tracking-wide uppercase text-sm">Serviços</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
               Momentos especiais para cada ocasião
@@ -198,14 +203,14 @@ export default function Home() {
               Cada cerimônia é única e personalizada para refletir sua história
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) => (
               <Card 
                 key={index} 
                 className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-card/50 backdrop-blur-sm group"
               >
                 <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mx-auto group-hover:bg-primary/20 transition-colors duration-300">
                     <service.icon className="w-8 h-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-serif font-semibold text-foreground">{service.title}</h3>
@@ -220,7 +225,7 @@ export default function Home() {
       {/* Portfolio Preview */}
       <section className="py-20 md:py-32 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
+          <div className="text-center max-w-3xl mx-auto mb-8 space-y-6">
             <span className="text-primary font-semibold tracking-wide uppercase text-sm">Portfólio</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
               Momentos capturados
@@ -262,7 +267,7 @@ export default function Home() {
       {/* Testimonials */}
       <section className="py-20 md:py-32 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
+          <div className="text-center max-w-3xl mx-auto mb-8 space-y-6">
             <span className="text-primary font-semibold tracking-wide uppercase text-sm">Depoimentos</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
               O que dizem os casais
@@ -291,7 +296,7 @@ export default function Home() {
                   <img 
                     src={testimonial.image} 
                     alt={testimonial.name} 
-                    className="w-16 h-16 rounded-full object-cover ring-2 ring-primary/20" 
+                    className="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20" 
                   />
                   <div>
                     <p className="font-semibold text-foreground text-lg">{testimonial.name}</p>

@@ -26,13 +26,13 @@ export default function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const activeLinkClass = 'text-primary border-b-2 border-primary';
-    const inactiveLinkClass = 'border-b-2 border-transparent hover:text-primary transition-colors duration-300';
+    const activeLinkClass = 'text-white border-b-2 border-white';
+    const inactiveLinkClass = 'border-b-2 text-foreground border-transparent hover:text-white transition-colors duration-300';
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/80 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-primary/80 backdrop-blur-sm shadow-md' : 'bg-primary'}`}>
       <div className="container mx-auto flex items-center justify-between p-4">
-        <Link href="/" className="text-2xl font-serif font-bold text-foreground">
+        <Link href="/" className="text-2xl font-serif font-bold text-foreground hover:text-white transition-colors duration-300">
           Lucas Sakai
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
@@ -46,7 +46,7 @@ export default function Header() {
               {link.title}
             </NavLink>
           ))}
-          <Button asChild className="rounded-full">
+          <Button asChild className="rounded-full bg-background hover:bg-accent hover:text-white dark:bg-accent transition-colors duration-300">
             <Link href="/contato">Contato</Link>
           </Button>
           <ThemeButton />
@@ -68,7 +68,7 @@ export default function Header() {
               <X className="h-6 w-6 text-foreground" />
             </button>
           </div>
-          <nav className="flex flex-col items-center justify-center space-y-8 mt-16">
+          <nav className="flex flex-col items-center justify-center space-y-8 mt-8">
             {navLinks.map((link) => (
               <NavLink
                 key={link.title}

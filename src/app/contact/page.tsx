@@ -50,7 +50,7 @@ function onSubmit(data: z.infer<typeof formSchema>) {
 
 export default function page() {
   return (
-    <div className="container mx-auto px-4 py-16 md:py-24 animate-fade-in-up">
+    <div className="container mx-auto px-4 py-8 md:py-24 animate-fade-in-up">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Entre em Contato</h1>
         <p className="text-lg text-muted-foreground mb-12">
@@ -58,7 +58,7 @@ export default function page() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-16 items-start max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <h2 className="text-2xl font-serif font-semibold mb-4 text-center md:text-left">Envie uma mensagem</h2>

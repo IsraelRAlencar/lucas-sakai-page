@@ -18,8 +18,16 @@ export default function FixedFooter() {
 
   return (
      <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border shadow-lg">
-      <div className="container mx-auto px-4 py-3">
-        <div className="flex justify-center items-center gap-4">
+      <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+        <div className="text-center md:text-left">
+        <p className="text-charcoal font-serif text-2xl mb-1">
+          Pronto para sua cerimônia inesquecível?
+        </p>
+        <p className="text-brown text-md">
+          Vamos celebrar seus sonhos
+        </p>
+      </div>
+        <div className="flex justify-end items-center gap-4">
           <Button
             onClick={handleContactClick}
             size="sm"
